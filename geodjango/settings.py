@@ -59,8 +59,8 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     'default': {
-        # 'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        # 'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'geodjango',
         'USER': 'postgres',
         'PASSWORD': "Cv82FjDjXr",
