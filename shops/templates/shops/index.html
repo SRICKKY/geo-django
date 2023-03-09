@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nearby Shops</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background-color: bisque;
+            margin: 0;
+        }
+        .search-form {
+            display: grid;
+            place-items: center;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+        }
+
+        input, button {
+            font-size: x-large;
+            margin: 10px;
+        }
+        .result {
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+        }
+
+        .result > ul {
+            list-style-type: none;
+            margin: 20px;
+            background-color: aquamarine;
+            /* margin: auto; */
+        }
+
+        li {
+            padding: 15px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Find Shops</h1>
+    <div class="search-form">
+        <form method="GET" action="" id="searchform">
+            <input class="searchfield" id="searchbox" name="latitude" type="text" value="{{ request.GET.latitude }}" placeholder="Enter latitude..." />
+            <input class="searchfield" id="searchbox" name="longitude" type="text" value="{{ request.GET.longitude }}" placeholder="Enter longitude..." />
+            <input class="searchfield" id="searchbox" name="search_radius" type="number" value="{{ request.GET.search_radius }}" placeholder="Search Radius" />
+            <button type="submit" class="btn bt-round"><b><i class="bi bi-search"></i>Search</b></button>
+        </form>
+    </div>
+    <div class="result">
+        {% if object_list %}
+        <ul>
+            {% for shop in object_list %}
+            <li>
+                {{ shop.name }}: {{shop.distance }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+
+</html>
