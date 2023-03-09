@@ -61,9 +61,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'geodjango',
-        'USER': 'denver',
-        'PASSWORD': "",
-        "HOST": "localhost",
+        'USER': 'postgres',
+        'PASSWORD': "Cv82FjDjXr",
+        "HOST": "database-1.cvcp8f1uem4e.ap-south-1.rds.amazonaws.com",
         "PORT": "5432"
     },
 }
